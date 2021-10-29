@@ -15,7 +15,7 @@ query GetHero(
   #}
 ) {
   hero {
-    name @include(if: $myBool)
+    name @include(if: true)
     ... on Human {
       height(unit: $unit)
       heightInMeters: height(unit: $optionalUnit)

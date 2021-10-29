@@ -1,3 +1,5 @@
+import com.apollographql.apollo3.compiler.MODELS_COMPAT
+
 plugins {
   id("org.jetbrains.kotlin.jvm").version("1.5.31")
   id("com.apollographql.apollo3").version("3.0.0-beta01")
@@ -17,9 +19,12 @@ apollo {
         .first { it.exists() }
 
       service(serviceDir.name) {
-        useVersion2Compat()
+        packageName.set(serviceDir.name)
+        codegenModels.set(MODELS_COMPAT)
+        sealedClassesForEnumsMatching.set(emptyList())
+        generateOptionalOperationVariables.set(true)
 
-        srcDir("../../../../graphql/com/example/${serviceDir.name}")
+        srcDir("../graphql/com/example/${serviceDir.name}")
         schemaFile.set(schema)
       }
     }
