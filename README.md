@@ -1,4 +1,5 @@
-A repo to compare the Apollo Android 2 and Apollo Android 3 models
+A repo to compare the Apollo Android 2 and Apollo Android 3 models.
+It uses the test fixtures from Apollo Android 2 and compares the jars with [japicmp](https://siom79.github.io/japicmp/)
 
 To generate the report, run
 
